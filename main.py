@@ -1,4 +1,3 @@
-# Launch in its own terminal windows only
 import os
 import sys
 import platform
@@ -124,12 +123,7 @@ system monitor - Start real time system monitoring and detect anomalies{RESET}""
 					pass
 
 		elif option == "netinfo":
-			if OS == "Windows":
-				os.system("ipconfig")
-			elif OS == "Darwin":
-				os.system("ifconfig")
-			else:
-				os.system("ip addr")
+			os.system("ipconfig")
 
 		elif option == "hostname":
 			print(f"Hostname: {platform.node()}")
@@ -150,7 +144,7 @@ system monitor - Start real time system monitoring and detect anomalies{RESET}""
 			print(subprocess.getoutput("query user"))
 
 		elif option == "clear" or option == "cls":
-			os.system("cls" if OS == "Windows" else "clear")
+			os.system("cls")
 
 		else:
 			print(f"{RED}Unknown command. Type 'help' for a list of commands.{RESET}")
